@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+
+Route::get('/my-rides','MyRidesController@index')->name('myRides');
+Route::get('/contact-us', 'ContactUsController@index')->name('contactUs');
+Route::post('/contact-us','ContactUsController@save')->name('saveContactUs');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
